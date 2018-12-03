@@ -1,0 +1,14 @@
+<launch> 
+        
+        <node pkg="orb_slam" type="orbslam2_mono" name="orbslam2_mono" required="true" output="screen"
+        args="$(find orb_slam)/Vocabulary/ORBvoc.txt $(find orb_slam)/config/mono.yaml" /> 
+
+        <node pkg="camnode" type="webcamnode" name="camera" required="true" output="screen" >
+                <param name="image_width" value="640" />
+                <param name="image_height" value="480" />
+                <param name="camera_frame_id" value="camera" />
+                <param name="camera_name" value="Logitech" />
+                <param name="camera_info_url" value="file://$(find camnode)/camera_info/${NAME}.yaml" />
+        </node> 
+
+</launch>

@@ -1,0 +1,17 @@
+<launch> 
+        
+        <node pkg="orb_slam" type="orbslam1_mono" name="orbslam1_mono" required="true" output="screen" 
+        args="Vocabulary/ORBvoc.txt config/mono.yaml" /> 
+
+        <node pkg="camnode" type="webcamnode" name="camera" required="true" output="screen" >
+                <param name="image_width" value="640" />
+                <param name="image_height" value="480" />
+                <param name="camera_frame_id" value="camera" />
+                <param name="camera_name" value="Logitech" />
+                <param name="camera_info_url" value="file://$(find camnode)/camera_info/${NAME}.yaml" />
+        </node> 
+
+	<node pkg="rviz" type="rviz" name="rviz" required="true" output="screen"
+        args="-d $(find orb_slam)/config/rviz.rviz" />
+
+</launch>
