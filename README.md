@@ -12,4 +12,4 @@ Before compiling it, you need to install ROS(Kinetic) and Pangolin first.
 
  - Pangolin Installation: https://github.com/stevenlovegrove/Pangolin
 
-Then `git clone https://github.com/LeeXujie/orb_slam.git` in a ROS workspace, and `catkin_make' this package.
+Then `git clone https://github.com/LeeXujie/orb_slam.git` in a ROS workspace, and `catkin_make` this package.
